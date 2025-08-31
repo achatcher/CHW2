@@ -1,0 +1,174 @@
+// Responsive breakpoints
+@mixin mobile-only {
+  @media (max-width: #{$mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: #{$large}) {
+    @content;
+  }
+}
+
+// Layout mixins
+@mixin container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  
+  @include mobile-only {
+    padding-left: $space-4;
+    padding-right: $space-4;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Typography mixins
+@mixin heading-1 {
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  font-size: $text-5xl;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  
+  @include mobile-only {
+    font-size: $text-4xl;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $font-primary;
+  font-weight: $font-semibold;
+  font-size: $text-4xl;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  
+  @include mobile-only {
+    font-size: $text-3xl;
+  }
+}
+
+@mixin heading-3 {
+  font-family: $font-primary;
+  font-weight: $font-medium;
+  font-size: $text-2xl;
+  line-height: 1.3;
+  
+  @include mobile-only {
+    font-size: $text-xl;
+  }
+}
+
+@mixin body-large {
+  font-family: $font-secondary;
+  font-weight: $font-regular;
+  font-size: $text-lg;
+  line-height: 1.6;
+}
+
+@mixin body-regular {
+  font-family: $font-secondary;
+  font-weight: $font-regular;
+  font-size: $text-base;
+  line-height: 1.6;
+}
+
+@mixin label-text {
+  font-family: $font-secondary;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Button mixins
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3 $space-6;
+  font-family: $font-secondary;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: $border-width solid transparent;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background-color: $primary-dark;
+  color: $white;
+  border-color: $primary-dark;
+  
+  &:hover {
+    background-color: $primary-medium;
+    border-color: $primary-medium;
+  }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background-color: transparent;
+  color: $primary-dark;
+  border-color: $primary-dark;
+  
+  &:hover {
+    background-color: $primary-dark;
+    color: $white;
+  }
+}
+
+// Background image mixins
+@mixin bg-image($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin overlay($color: rgba(0, 0, 0, 0.4)) {
+  @include absolute-cover;
+  background-color: $color;
+}
