@@ -297,23 +297,29 @@
 .checkbox-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; // Increased from 0.75rem
+    gap: 0.75rem; // Reduced gap for better spacing
 }
 
 .checkbox-option {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    padding: 1rem; // Increased padding
-    border-radius: 12px; // More rounded corners
-    transition: all 0.3s ease;
-    border: 1px solid transparent; // Add border for better hover state
+    // Remove the display: flex from here since the label handles the layout
     
-    &:hover {
-        background: rgba(85, 107, 86, 0.08); // Slightly more opacity
-        border-color: rgba(85, 107, 86, 0.2); // Add border on hover
-        transform: translateY(-1px); // Subtle lift effect
+    .checkbox-label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+        padding: 0.75rem 1rem; // Reduced vertical padding
+        border-radius: 8px; // Slightly less rounded for a cleaner look
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+        width: 100%;
+        
+        &:hover {
+            background: rgba(85, 107, 86, 0.08);
+            border-color: rgba(85, 107, 86, 0.2);
+            transform: translateY(-1px);
+        }
     }
     
     input[type="checkbox"] {
@@ -324,49 +330,61 @@
         font-size: 14px;
         color: $color-dark;
         line-height: 1.4;
-        font-weight: 500; // Make text slightly bolder
+        font-weight: 500;
+        flex: 1; // This ensures the text takes up remaining space
     }
 }
 
 .checkbox-checkmark {
-    width: 22px; // Slightly larger
-    height: 22px;
-    border: 2px solid #D1D5DB; // Lighter default border
-    border-radius: 6px; // More rounded
+    width: 20px; // Slightly smaller for better proportions
+    height: 20px;
+    border: 2px solid #D1D5DB;
+    border-radius: 4px; // Less rounded for a more modern look
     position: relative;
     transition: all 0.3s ease;
-    flex-shrink: 0;
-    background: white; // Ensure white background
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Add subtle shadow
+    flex-shrink: 0; // Prevents the checkbox from shrinking
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     
     &::after {
         content: '';
         position: absolute;
-        top: 3px; // Adjusted for larger size
-        left: 7px;
+        top: 2px; // Adjusted for smaller size
+        left: 6px;
         width: 4px;
         height: 8px;
         border: solid white;
         border-width: 0 2px 2px 0;
         transform: rotate(45deg) scale(0);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); // Bouncy animation
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-checkmark {
-    background: linear-gradient(135deg, $color-primary, $color-primary-dark); // Gradient background
+    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
     border-color: $color-primary;
-    box-shadow: 0 2px 8px rgba(85, 107, 86, 0.3); // Enhanced shadow when checked
+    box-shadow: 0 2px 8px rgba(85, 107, 86, 0.3);
     
     &::after {
         transform: rotate(45deg) scale(1);
     }
 }
 
-// Add focus styles for accessibility
-.checkbox-option:focus-within .checkbox-checkmark {
+.checkbox-option .checkbox-label:focus-within .checkbox-checkmark {
     outline: 2px solid $color-primary;
     outline-offset: 2px;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr; // Single column on mobile
+        gap: 0.5rem;
+    }
+    
+    .checkbox-option .checkbox-label {
+        padding: 0.75rem;
+    }
 }
 
 // Responsive Design for Resources Page

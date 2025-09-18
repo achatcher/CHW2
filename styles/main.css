@@ -864,7 +864,7 @@ p {
   margin-bottom: 1rem;
 }
 .newsletter-form .form-group label {
-  display: block;
+  display: flex;
   margin-bottom: 0.25rem;
   font-weight: 500;
   color: #2A2622;
@@ -893,6 +893,7 @@ p {
 
 .checkbox-option {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -2070,18 +2071,33 @@ p {
   background: linear-gradient(135deg, #556B56, #3D5A41);
   color: white;
 }
-.service-card--primary h3, .service-card--primary p {
-  color: white;
+.service-card--primary * {
+  color: white !important;
+}
+.service-card--primary h3, .service-card--primary p, .service-card--primary span {
+  color: white !important;
 }
 .service-card--primary .service-card__icon {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: white !important;
 }
 .service-card--primary .service-feature {
-  color: rgba(255, 255, 255, 0.9);
+  color: white !important;
 }
 .service-card--primary .service-feature i {
-  color: white;
+  color: white !important;
+}
+.service-card--primary .service-feature span {
+  color: white !important;
+}
+.service-card--primary .btn, .service-card--primary .btn--lg {
+  color: white !important;
+  background: transparent !important;
+  border: 2px solid white !important;
+}
+.service-card--primary .btn:hover, .service-card--primary .btn--lg:hover {
+  background: white !important;
+  color: #556B56 !important;
 }
 
 .service-card__icon {
@@ -2379,12 +2395,24 @@ p {
   background: linear-gradient(135deg, #556B56, #3D5A41);
   color: white;
 }
+.contact-option--primary * {
+  color: white !important;
+}
 .contact-option--primary h3, .contact-option--primary p {
-  color: white;
+  color: white !important;
 }
 .contact-option--primary .contact-option__icon {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: white !important;
+}
+.contact-option--primary .btn, .contact-option--primary .btn--lg {
+  color: white !important;
+  background: transparent !important;
+  border: 2px solid white !important;
+}
+.contact-option--primary .btn:hover, .contact-option--primary .btn--lg:hover {
+  background: white !important;
+  color: #556B56 !important;
 }
 
 .contact-option__icon {
@@ -2958,20 +2986,22 @@ p {
 .checkbox-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
-.checkbox-option {
+.checkbox-option .checkbox-label {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  width: 100%;
 }
-.checkbox-option:hover {
+.checkbox-option .checkbox-label:hover {
   background: rgba(85, 107, 86, 0.08);
   border-color: rgba(85, 107, 86, 0.2);
   transform: translateY(-1px);
@@ -2984,13 +3014,14 @@ p {
   color: #2A2622;
   line-height: 1.4;
   font-weight: 500;
+  flex: 1;
 }
 
 .checkbox-checkmark {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #D1D5DB;
-  border-radius: 6px;
+  border-radius: 4px;
   position: relative;
   transition: all 0.3s ease;
   flex-shrink: 0;
@@ -3000,8 +3031,8 @@ p {
 .checkbox-checkmark::after {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 7px;
+  top: 2px;
+  left: 6px;
   width: 4px;
   height: 8px;
   border: solid white;
@@ -3019,11 +3050,20 @@ p {
   transform: rotate(45deg) scale(1);
 }
 
-.checkbox-option:focus-within .checkbox-checkmark {
+.checkbox-option .checkbox-label:focus-within .checkbox-checkmark {
   outline: 2px solid #556B56;
   outline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .checkbox-option .checkbox-label {
+    padding: 0.75rem;
+  }
+}
 @media (max-width: 1024px) {
   .resource-grid {
     grid-template-columns: 1fr;

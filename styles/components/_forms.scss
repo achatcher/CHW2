@@ -162,7 +162,7 @@
         margin-bottom: 1rem; // Reduced from 1.5rem
         
         label {
-            display: block;
+            display: flex;
             margin-bottom: 0.25rem; // Reduced from 0.5rem
             font-weight: 500;
             color: $color-dark;
@@ -195,6 +195,7 @@
 
 .checkbox-option {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 0.5rem; // Reduced from 0.75rem
     cursor: pointer;

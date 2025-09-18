@@ -18,7 +18,7 @@ class CHWWebsite {
         this.setupScrollAnimations();
         this.setupFormHandling();
         this.setupSmoothScrolling();
-        this.setupParallaxEffects();
+
         this.setupAccessibility();
         this.addLoadingComplete();
     }
@@ -217,38 +217,7 @@ class CHWWebsite {
         });
     }
 
-    // Parallax Effects for Hero Sections
-    setupParallaxEffects() {
-        const parallaxElements = document.querySelectorAll('.hero__background, .page-header__background');
-        
-        if (parallaxElements.length === 0 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
-        }
-
-        const handleParallax = () => {
-            const scrolled = window.pageYOffset;
-            
-            parallaxElements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                const speed = 0.3;
-                
-                if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
-                    const yPos = -(scrolled * speed);
-                    element.style.transform = `translate3d(0, ${yPos}px, 0)`;
-                }
-            });
-        };
-
-        window.addEventListener('scroll', () => {
-            if (!this.ticking) {
-                requestAnimationFrame(() => {
-                    handleParallax();
-                    this.ticking = false;
-                });
-                this.ticking = true;
-            }
-        }, { passive: true });
-    }
+   
 
     // Enhanced Accessibility Features
     setupAccessibility() {

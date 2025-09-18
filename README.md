@@ -1,6 +1,6 @@
-# CHW - Community Heart & Wellness Website
+# CHW - Chicago Holistic Women Website
 
-A responsive, professional website for CHW (Community Heart & Wellness), supporting women from menarche to menopause and beyond.
+A responsive, professional website for CHW (Chicago Holistic Women), supporting women from menarche to menopause and beyond.
 
 ## Features
 

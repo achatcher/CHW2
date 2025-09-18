@@ -50,20 +50,41 @@
         background: linear-gradient(135deg, $color-primary, $color-primary-dark);
         color: white;
         
-        h3, p {
-            color: white;
+        // Force all text elements to be white
+        * {
+            color: white !important;
+        }
+        
+        h3, p, span {
+            color: white !important;
         }
         
         .service-card__icon {
             background: rgba(255, 255, 255, 0.2);
-            color: white;
+            color: white !important;
         }
         
         .service-feature {
-            color: rgba(255, 255, 255, 0.9);
+            color: white !important;
             
             i {
-                color: white;
+                color: white !important;
+            }
+            
+            span {
+                color: white !important;
+            }
+        }
+        
+        // Target the specific button classes used in your HTML
+        .btn, .btn--lg {
+            color: white !important;
+            background: transparent !important;
+            border: 2px solid white !important;
+            
+            &:hover {
+                background: white !important;
+                color: $color-primary !important;
             }
         }
     }

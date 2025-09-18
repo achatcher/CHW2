@@ -56,13 +56,30 @@
         background: linear-gradient(135deg, $color-primary, $color-primary-dark);
         color: white;
         
+        // Force all text to be white
+        * {
+            color: white !important;
+        }
+        
         h3, p {
-            color: white;
+            color: white !important;
         }
         
         .contact-option__icon {
             background: rgba(255, 255, 255, 0.2);
-            color: white;
+            color: white !important;
+        }
+        
+        // Target the specific button classes
+        .btn, .btn--lg {
+            color: white !important;
+            background: transparent !important;
+            border: 2px solid white !important;
+            
+            &:hover {
+                background: white !important;
+                color: $color-primary !important;
+            }
         }
     }
 }
