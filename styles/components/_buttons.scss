@@ -1,0 +1,86 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# BUTTONS
+--------------------------------------------------------------*/
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: $transition-base;
+    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    color: white;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(61, 90, 65, 0.3);
+    }
+    
+    &--secondary {
+        background: transparent;
+        color: white;
+        border-color: rgba(255, 255, 255, 0.5);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+    }
+    
+    &--blush {
+        background: linear-gradient(135deg, $color-secondary, $color-secondary-dark);
+    }
+    
+    &--lg {
+        padding: 1.25rem 2.5rem;
+        font-size: 16px;
+    }
+    
+    &--xl {
+        padding: 1.5rem 3rem;
+        font-size: 18px;
+    }
+    
+    &--outline {
+        background: transparent;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+        
+        &:hover {
+            background: $color-primary;
+            color: white;
+        }
+    }
+    
+    &--full {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 13px;
+    }
+    
+    .btn--lg {
+        padding: 1rem 2rem;
+        font-size: 14px;
+    }
+    
+    .btn--xl {
+        padding: 1.25rem 2.25rem;
+        font-size: 16px;
+    }
+}

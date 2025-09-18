@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# ANIMATIONS
+--------------------------------------------------------------*/
+
+// Animation Utilities
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: staggerFadeIn 0.8s ease forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes staggerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Scroll wheel animation
+@keyframes scroll-wheel {
+    0%, 20% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+}

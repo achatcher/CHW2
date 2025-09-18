@@ -1,0 +1,26 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# NAVIGATION GRID
+--------------------------------------------------------------*/
+
+.nav-grid {
+    background: linear-gradient(180deg, $color-bg 0%, rgba(232, 240, 232, 0.3) 50%, $color-bg 100%);
+}
+
+.nav-grid__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.nav-grid__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 640px) {
+    .nav-grid__container {
+        grid-template-columns: 1fr;
+    }
+}

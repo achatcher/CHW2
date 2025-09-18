@@ -1,0 +1,92 @@
+@use 'sass:math';
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+        @media (max-width: $breakpoint-sm) { @content; }
+    }
+    @if $breakpoint == md {
+        @media (max-width: $breakpoint-md) { @content; }
+    }
+    @if $breakpoint == lg {
+        @media (max-width: $breakpoint-lg) { @content; }
+    }
+    @if $breakpoint == xl {
+        @media (max-width: $breakpoint-xl) { @content; }
+    }
+}
+
+// Card styles
+@mixin card-hover {
+    transition: $transition-base;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Button variants
+@mixin button-variant($bg-color, $text-color: white) {
+    background: $bg-color;
+    color: $text-color;
+    border-color: $bg-color;
+    
+    &:hover {
+        background: darken($bg-color, 10%);
+        border-color: darken($bg-color, 10%);
+    }
+}
+
+// Gradient backgrounds
+@mixin gradient-bg($color1, $color2, $direction: 135deg) {
+    background: linear-gradient($direction, $color1, $color2);
+}
+
+// Overlay mixin
+@mixin overlay($opacity: 0.7) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, $opacity);
+    z-index: 1;
+}
+
+// Center content
+@mixin center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button-hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(61, 90, 65, 0.3);
+}
+
+@mixin card-hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+// Aspect ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+    position: relative;
+    
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: math.div($height, $width) * 100%;
+    }
+    
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

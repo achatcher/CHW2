@@ -1,0 +1,79 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# RESET & BASE STYLES
+--------------------------------------------------------------*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    font-family: $font-secondary;
+    line-height: 1.6;
+    color: $color-dark;
+    background-color: $color-bg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+    .hero__overlay {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .nav-card__overlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 100%);
+    }
+    
+    .community-cta__overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+// Print styles
+@media print {
+    .header, .footer, .hero__scroll-indicator, .btn {
+        display: none;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+        background: white;
+        color: black;
+    }
+    
+    .hero__content {
+        color: black;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}

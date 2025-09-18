@@ -1,72 +1,41 @@
-// Sophisticated Color Palette
-$primary-dark: #2C3E50;       // Deep slate
-$primary-medium: #34495E;     // Medium slate
-$primary-light: #ECF0F1;      // Light gray
-$accent-gold: #F39C12;        // Elegant gold
-$accent-rose: #E8B4B8;        // Muted rose
-$accent-sage: #95A5A6;        // Sage green
+// _variables.scss
+@use 'sass:color';
 
-// Neutral Palette
-$white: #FFFFFF;
-$cream: #FDFCFA;
-$light-gray: #F8F9FA;
-$medium-gray: #BDC3C7;
-$dark-gray: #7F8C8D;
-$charcoal: #2C3E50;
+// Colors
+$color-primary: #556B56;
+$color-primary-dark: #3D5A41;
+$color-secondary: #8B4A5C;
+$color-secondary-dark: #A04B5C;
+$color-dark: #2A2622;
+$color-dark-light: #1F1E1B;
+$color-text: #556B56;
+$color-bg: #FDFBF9;
+$color-accent: #E8F0E8;
+$color-border: rgba(61, 90, 65, 0.1);
+$color-overlay: rgba(61, 90, 65, 0.7);
 
 // Typography
-$font-primary: 'Cormorant Garamond', serif;
-$font-secondary: 'Inter', sans-serif;
+$font-primary: 'Playfair Display', serif;
+$font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-script: 'Dancing Script', cursive;
 
-// Font weights
-$font-light: 300;
-$font-regular: 400;
-$font-medium: 500;
-$font-semibold: 600;
-$font-bold: 700;
-
-// Typography scale
-$text-xs: 0.75rem;     // 12px
-$text-sm: 0.875rem;    // 14px
-$text-base: 1rem;      // 16px
-$text-lg: 1.125rem;    // 18px
-$text-xl: 1.25rem;     // 20px
-$text-2xl: 1.5rem;     // 24px
-$text-3xl: 1.875rem;   // 30px
-$text-4xl: 2.25rem;    // 36px
-$text-5xl: 3rem;       // 48px
-$text-6xl: 3.75rem;    // 60px
-
-// Spacing scale
-$space-1: 0.25rem;     // 4px
-$space-2: 0.5rem;      // 8px
-$space-3: 0.75rem;     // 12px
-$space-4: 1rem;        // 16px
-$space-5: 1.25rem;     // 20px
-$space-6: 1.5rem;      // 24px
-$space-8: 2rem;        // 32px
-$space-10: 2.5rem;     // 40px
-$space-12: 3rem;       // 48px
-$space-16: 4rem;       // 64px
-$space-20: 5rem;       // 80px
-$space-24: 6rem;       // 96px
-$space-32: 8rem;       // 128px
+// Spacing
+$section-padding: 6rem 0;
+$section-padding-lg: 8rem 0;
+$container-max-width: 1200px;
+$container-padding: 0 2rem;
 
 // Breakpoints
-$mobile: 640px;
-$tablet: 768px;
-$desktop: 1024px;
-$large: 1280px;
-$xl: 1536px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
 
-// Container
-$container-max: 1200px;
-$container-padding: $space-6;
+// Shadows
+$shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
 
-// Borders & Effects
-$border-radius: 0;
-$border-width: 1px;
-$transition: all 0.3s ease;
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;

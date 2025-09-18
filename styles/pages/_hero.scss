@@ -1,0 +1,233 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# HERO SECTION
+--------------------------------------------------------------*/
+
+.hero {
+    position: relative;
+    height: 60vh; // Changed from min-height: 100vh
+    min-height: 600px; // Added min-height like other pages
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: $color-accent;
+    overflow: hidden;
+    margin-top: 80px; // Added to account for fixed header like other pages
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 90, 65, 0.7); // Changed to match other pages
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; // Reduced from 900px to match other pages
+    padding: 0 2rem;
+    color: white;
+}
+
+.hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.95);
+    color: $color-primary-dark;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem); // Matches page-header sizing
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__subtitle {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.hero__description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95); // Increased opacity to match other pages
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.scroll-mouse {
+    width: 20px;
+    height: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-mouse::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 2px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1px;
+    transform: translateX(-50%);
+    animation: scroll-wheel 2s infinite ease-in-out;
+}
+
+@keyframes scroll-wheel {
+    0%, 20% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+}
+
+// Page Header (for other pages) - Keep existing
+.page-header {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.page-header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.page-header__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 90, 65, 0.7);
+    z-index: 1;
+}
+
+.page-header__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.page-header__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header__description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero__scroll-indicator {
+        display: none;
+    }
+    
+    .hero__content {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; // Match other pages on mobile
+        min-height: 600px;
+    }
+    
+    .page-header {
+        height: 50vh;
+        min-height: 500px;
+    }
+    
+    .page-header__content {
+        padding: 0 1rem;
+    }
+}

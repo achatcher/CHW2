@@ -1,0 +1,460 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# RESOURCES PAGE SECTIONS
+--------------------------------------------------------------*/
+
+.resources-intro {
+    background: linear-gradient(180deg, $color-bg 0%, rgba(232, 240, 232, 0.3) 100%);
+}
+
+.resources-intro__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+// Resource Categories
+.resource-category {
+    &:nth-child(even) {
+        background: rgba(232, 240, 232, 0.2);
+    }
+}
+
+.herbal-section {
+    background: linear-gradient(135deg, rgba(139, 74, 92, 0.03), rgba(232, 240, 232, 0.3));
+}
+
+.resource-category__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resource-category__icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.resource-category__content {
+    text-align: left;
+    
+    h2 {
+        margin-bottom: 1rem;
+        color: $color-dark;
+    }
+    
+    p {
+        color: $color-primary;
+        margin: 0;
+    }
+}
+
+// Resource Grid
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.resource-item {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: $transition-base;
+    border: 1px solid rgba(61, 90, 65, 0.1);
+    display: flex;
+    flex-direction: column;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        border-color: rgba(61, 90, 65, 0.2);
+    }
+}
+
+.resource-item__content {
+    padding: 2rem;
+    flex: 1;
+    
+    h3 {
+        margin-bottom: 1rem;
+        color: $color-dark;
+        font-size: 20px;
+    }
+    
+    p {
+        color: $color-primary;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.resource-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.resource-item__footer {
+    padding: 1rem 2rem;
+    background: rgba(232, 240, 232, 0.3);
+    border-top: 1px solid rgba(61, 90, 65, 0.1);
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-primary-dark;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: $color-dark;
+    }
+    
+    i {
+        font-size: 16px;
+    }
+}
+
+// Recommended Reading
+.recommended-reading {
+    background: $color-bg;
+}
+
+.recommended-reading__header {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.book-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: $transition-base;
+    border: 1px solid rgba(61, 90, 65, 0.1);
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        border-color: rgba(61, 90, 65, 0.2);
+    }
+}
+
+.book-item__icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, $color-secondary, $color-secondary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    margin: 0 auto 1.5rem;
+}
+
+.book-item__content {
+    h3 {
+        margin-bottom: 0.5rem;
+        color: $color-dark;
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    
+    .book-author {
+        color: $color-secondary;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+    
+    p {
+        color: $color-primary;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+// Newsletter Signup
+.newsletter-signup {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.newsletter-signup__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.newsletter-signup__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.newsletter-signup__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(61, 90, 65, 0.85), rgba(139, 74, 92, 0.85));
+    z-index: 1;
+}
+
+.newsletter-signup__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 100%;
+}
+
+.newsletter-header {
+    margin-bottom: 3rem;
+    
+    h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    p {
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        margin: 0;
+    }
+}
+
+.newsletter-benefits {
+    margin-bottom: 3rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.benefit-item__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.benefit-item span {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; // Increased from 0.75rem
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 1rem; // Increased padding
+    border-radius: 12px; // More rounded corners
+    transition: all 0.3s ease;
+    border: 1px solid transparent; // Add border for better hover state
+    
+    &:hover {
+        background: rgba(85, 107, 86, 0.08); // Slightly more opacity
+        border-color: rgba(85, 107, 86, 0.2); // Add border on hover
+        transform: translateY(-1px); // Subtle lift effect
+    }
+    
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    span {
+        font-size: 14px;
+        color: $color-dark;
+        line-height: 1.4;
+        font-weight: 500; // Make text slightly bolder
+    }
+}
+
+.checkbox-checkmark {
+    width: 22px; // Slightly larger
+    height: 22px;
+    border: 2px solid #D1D5DB; // Lighter default border
+    border-radius: 6px; // More rounded
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    background: white; // Ensure white background
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Add subtle shadow
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 3px; // Adjusted for larger size
+        left: 7px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) scale(0);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); // Bouncy animation
+    }
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-checkmark {
+    background: linear-gradient(135deg, $color-primary, $color-primary-dark); // Gradient background
+    border-color: $color-primary;
+    box-shadow: 0 2px 8px rgba(85, 107, 86, 0.3); // Enhanced shadow when checked
+    
+    &::after {
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+// Add focus styles for accessibility
+.checkbox-option:focus-within .checkbox-checkmark {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+}
+
+// Responsive Design for Resources Page
+@media (max-width: 1024px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-category__header {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        
+        .resource-category__content {
+            text-align: center;
+        }
+    }
+    
+    .resource-category__icon {
+        width: 64px;
+        height: 64px;
+        font-size: 24px;
+    }
+    
+    .resource-item__content {
+        padding: 1.5rem;
+    }
+    
+    .resource-item__footer {
+        padding: 1rem 1.5rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .book-item {
+        padding: 1.5rem;
+    }
+    
+    .book-item__icon {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+    }
+    
+    .newsletter-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .newsletter-benefits {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .newsletter-signup {
+        min-height: 600px;
+    }
+    
+    .newsletter-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .benefit-item {
+        padding: 0.75rem 0;
+    }
+    
+    .benefit-item__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .resource-tags {
+        gap: 0.25rem;
+    }
+    
+    .resource-tag {
+        font-size: 11px;
+        padding: 0.2rem 0.6rem;
+    }
+}

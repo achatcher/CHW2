@@ -1,0 +1,409 @@
+@use '../variables' as *;
+
+/*--------------------------------------------------------------
+# SIMPLIFIED CONTACT PAGE
+--------------------------------------------------------------*/
+
+// Simple Contact Section
+.contact-simple {
+    background: $color-bg;
+}
+
+.contact-simple__content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-simple__intro {
+    margin-bottom: 4rem;
+    
+    h2 {
+        margin-bottom: 1.5rem;
+        color: $color-dark;
+    }
+    
+    .lead {
+        color: $color-text;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// Contact Options
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-option {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(61, 90, 65, 0.08);
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    &--primary {
+        background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+        color: white;
+        
+        h3, p {
+            color: white;
+        }
+        
+        .contact-option__icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+    }
+}
+
+.contact-option__icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, $color-accent, rgba(232, 240, 232, 0.8));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: $color-primary-dark;
+    font-size: 32px;
+}
+
+.contact-option__content {
+    h3 {
+        margin-bottom: 1rem;
+        color: $color-dark;
+        font-size: 1.5rem;
+    }
+    
+    p {
+        color: $color-text;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+}
+
+// Contact Details
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: $color-text;
+    font-size: 15px;
+    
+    i {
+        color: $color-primary;
+        font-size: 18px;
+    }
+}
+
+// Simple FAQ Section
+.contact-faq {
+    background: rgba(232, 240, 232, 0.3);
+}
+
+.contact-faq__content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: $color-dark;
+    }
+}
+
+.faq-simple {
+    display: grid;
+    gap: 2rem;
+}
+
+.faq-simple__item {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid $color-primary;
+    
+    h3 {
+        color: $color-primary-dark;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    p {
+        color: $color-text;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .contact-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-option {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-option__icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-details {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    
+    .faq-simple__item {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-simple__intro {
+        margin-bottom: 3rem;
+    }
+    
+    .contact-option {
+        padding: 1.5rem;
+    }
+    
+    .contact-option__content h3 {
+        font-size: 1.25rem;
+    }
+}
+/*--------------------------------------------------------------
+# CONTACT MODAL
+--------------------------------------------------------------*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 2rem;
+    
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.modal {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.3s ease;
+    
+    .modal-overlay.active & {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 0;
+    border-bottom: 1px solid rgba(61, 90, 65, 0.1);
+    margin-bottom: 2rem;
+    
+    h2 {
+        color: $color-dark;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $color-text;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(61, 90, 65, 0.1);
+        color: $color-primary-dark;
+    }
+    
+    i {
+        font-size: 20px;
+    }
+}
+
+.modal__body {
+    padding: 0 2rem 2rem;
+}
+
+.modal__intro {
+    color: $color-text;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+// Modal Form Styles
+.modal-form {
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.25rem;
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: $color-dark;
+            font-size: 14px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: $transition-base;
+            background: white;
+            font-family: inherit;
+            
+            &:focus {
+                outline: none;
+                border-color: $color-primary;
+                box-shadow: 0 0 0 3px rgba(85, 107, 86, 0.1);
+            }
+            
+            &::placeholder {
+                color: #9CA3AF;
+            }
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        select {
+            cursor: pointer;
+        }
+    }
+    
+    .btn--full {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .form-note {
+        text-align: center;
+        font-size: 12px;
+        color: #6B7280;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+// Modal Responsive
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 1rem;
+    }
+    
+    .modal {
+        max-height: 95vh;
+    }
+    
+    .modal__header {
+        padding: 1.5rem 1.5rem 0;
+        margin-bottom: 1.5rem;
+        
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .modal__body {
+        padding: 0 1.5rem 1.5rem;
+    }
+    
+    .modal-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .modal-form .form-group {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 0.5rem;
+    }
+    
+    .modal__header {
+        padding: 1rem 1rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    .modal__body {
+        padding: 0 1rem 1rem;
+    }
+}
+
+// Prevent body scroll when modal is open
+.modal-open {
+    overflow: hidden;
+}
