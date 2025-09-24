@@ -1,0 +1,690 @@
+/* selfcare-handout-styles.css */
+:root {
+    --color-primary: #556B56;
+    --color-primary-dark: #3D5A41;
+    --color-secondary: #8B4A5C;
+    --color-accent: #D4A574;
+    --color-bg: #FDFBF9;
+    --color-text: #4A4A4A;
+    --color-dark: #2C2C2C;
+    
+    /* Season colors */
+    --color-spring: #7FB069;
+    --color-summer: #FFD23F;
+    --color-autumn: #D4A574;
+    --color-winter: #A8DADC;
+    
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-script: 'Dancing Script', cursive;
+    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-text);
+    line-height: 1.4;
+    font-size: 11px;
+    background: white;
+}
+
+.handout {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.5in;
+    background: white;
+    position: relative;
+}
+
+/* Header - Same as first handout */
+.handout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.logo__icon {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.logo__text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-dark);
+}
+
+.header-right {
+    text-align: right;
+}
+
+.handout-title {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.handout-subtitle {
+    font-family: var(--font-script);
+    font-size: 14px;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Section Styling */
+section {
+    margin-bottom: var(--spacing-xl);
+    break-inside: avoid;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.section-title i {
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+/* Daily Rituals */
+.timeframe-card {
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    break-inside: avoid;
+}
+
+.timeframe-card.morning { border-left: 4px solid var(--color-accent); }
+.timeframe-card.midday { border-left: 4px solid var(--color-summer); }
+.timeframe-card.evening { border-left: 4px solid var(--color-secondary); }
+
+.timeframe-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.timeframe-header h3 {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.time-icon {
+    font-size: 16px;
+}
+
+.time-label {
+    font-size: 9px;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-style: italic;
+}
+
+.practices-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.practice-item {
+    background: rgba(253, 251, 249, 0.8);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    border-left: 2px solid var(--color-accent);
+}
+
+.practice-item strong {
+    color: var(--color-primary-dark);
+    font-size: 10px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.practice-item p {
+    font-size: 9px;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Stress Support */
+.stress-toolbox {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.stress-category {
+    background: white;
+    border: 1px solid rgba(139, 74, 92, 0.2);
+    border-radius: 6px;
+    padding: var(--spacing-lg);
+}
+
+.stress-category h4 {
+    color: var(--color-secondary);
+    font-size: 11px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.stress-category ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.stress-category li {
+    font-size: 9px;
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: 8px;
+    line-height: 1.3;
+}
+
+.stress-category li::before {
+    content: '•';
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Seasonal Care */
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.season-card {
+    border-radius: 6px;
+    padding: var(--spacing-md);
+    background: white;
+    border: 1px solid;
+    break-inside: avoid;
+}
+
+.season-card.spring { border-color: var(--color-spring); background: rgba(127, 176, 105, 0.05); }
+.season-card.summer { border-color: var(--color-summer); background: rgba(255, 210, 63, 0.05); }
+.season-card.autumn { border-color: var(--color-autumn); background: rgba(212, 165, 116, 0.05); }
+.season-card.winter { border-color: var(--color-winter); background: rgba(168, 218, 220, 0.05); }
+
+.season-card h4 {
+    font-size: 11px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.season-practices p {
+    font-size: 9px;
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary);
+}
+
+.season-practices ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.season-practices li {
+    font-size: 8px;
+    margin-bottom: 2px;
+    position: relative;
+    padding-left: 8px;
+    line-height: 1.3;
+}
+
+.season-practices li::before {
+    content: '○';
+    position: absolute;
+    left: 0;
+    font-size: 6px;
+    color: var(--color-primary);
+}
+
+/* Community Connection */
+.connection-types {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.connection-category {
+    background: rgba(232, 240, 232, 0.3);
+    border-radius: 6px;
+    padding: var(--spacing-lg);
+    border-left: 3px solid var(--color-primary);
+}
+
+.connection-category h4 {
+    color: var(--color-primary-dark);
+    font-size: 11px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.support-ideas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* selfcare-handout-styles.css - Continued */
+
+.support-item {
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    border: 1px solid rgba(85, 107, 86, 0.2);
+}
+
+.support-item strong {
+    color: var(--color-primary-dark);
+    font-size: 9px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.support-item {
+    font-size: 8px;
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+/* Resource Library */
+.resource-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.resource-category {
+    background: white;
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    padding: var(--spacing-lg);
+}
+
+.resource-category h4 {
+    color: var(--color-accent);
+    font-size: 11px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.resource-category ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resource-category li {
+    font-size: 9px;
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: 8px;
+    line-height: 1.3;
+}
+
+.resource-category li::before {
+    content: '▸';
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+}
+
+.resource-category li strong {
+    color: var(--color-primary-dark);
+}
+
+.disclaimer {
+    background: rgba(212, 165, 116, 0.1);
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    font-size: 8px;
+    font-style: italic;
+    color: var(--color-text);
+}
+
+/* Emergency Self-Care Kit */
+.emergency-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.emergency-type {
+    background: rgba(139, 74, 92, 0.05);
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+}
+
+.emergency-type h4 {
+    color: var(--color-secondary);
+    font-size: 11px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    text-align: center;
+}
+
+.emergency-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.step {
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 9px;
+    border-left: 3px solid var(--color-secondary);
+    line-height: 1.3;
+}
+
+/* Personal Action Plan */
+.action-plan {
+    background: rgba(85, 107, 86, 0.05);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+}
+
+.planning-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.plan-section h4 {
+    color: var(--color-primary-dark);
+    font-size: 10px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.fill-lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.fill-line {
+    font-size: 9px;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 2px;
+    min-height: 16px;
+}
+
+/* Footer */
+.handout-footer {
+    border-top: 2px solid var(--color-primary);
+    padding-top: var(--spacing-lg);
+    margin-top: auto;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.contact-section h4 {
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    font-size: 10px;
+    color: var(--color-text);
+}
+
+.contact-item strong {
+    color: var(--color-primary-dark);
+}
+
+.services-reminder {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.services-reminder p {
+    font-size: 10px;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+}
+
+.tagline {
+    font-family: var(--font-script);
+    font-size: 12px;
+    color: var(--color-secondary);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 10px;
+    }
+    
+    .handout {
+        width: 100%;
+        margin: 0;
+        padding: 0.4in;
+        box-shadow: none;
+    }
+    
+    .content-grid {
+        gap: 0.75rem;
+    }
+    
+    .timeframe-card,
+    .stress-category,
+    .season-card,
+    .connection-category,
+    .resource-category,
+    .emergency-type,
+    .action-plan {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .section-title i {
+        color: var(--color-primary) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .logo__icon {
+        background: var(--color-primary) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .services-reminder {
+        background: var(--color-primary) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    /* Ensure colored borders print */
+    .timeframe-card,
+    .stress-category,
+    .season-card,
+    .connection-category,
+    .resource-category,
+    .emergency-type,
+    .action-plan {
+        border: 1px solid var(--color-primary) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    /* Season card colors for print */
+    .season-card.spring {
+        border-color: var(--color-spring) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .season-card.summer {
+        border-color: var(--color-summer) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .season-card.autumn {
+        border-color: var(--color-autumn) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .season-card.winter {
+        border-color: var(--color-winter) !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
+
+/* Screen View (for preview) */
+@media screen {
+    body {
+        background: #f5f5f5;
+        padding: 1in;
+    }
+    
+    .handout {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
+}
+
+/* Mobile adjustments for preview */
+@media screen and (max-width: 768px) {
+    .handout {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .handout-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .header-right {
+        text-align: center;
+    }
+    
+    .seasonal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+.timeframe-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}
+
+/* Specific adjustments for very small text readability */
+@media print and (max-resolution: 150dpi) {
+    body {
+        font-size: 11px;
+    }
+    
+    .practice-item p,
+    .stress-category li,
+    .season-practices li {
+        font-size: 10px;
+    }
+    
+    .fill-line {
+        font-size: 10px;
+        min-height: 18px;
+    }
+}
