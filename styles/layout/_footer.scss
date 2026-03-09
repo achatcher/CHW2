@@ -5,6 +5,7 @@
 --------------------------------------------------------------*/
 
 .footer {
+    // Kept your exact gradient logic, just using the new $color-dark
     background: linear-gradient(135deg, $color-dark, #1F1E1B);
     color: white;
     padding: 4rem 0 0;
@@ -59,6 +60,7 @@
 }
 
 .footer__bottom {
+    // Kept your 0.1 opacity, just cleaned up to be pure white-based
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem 0;
     text-align: center;
