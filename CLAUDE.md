@@ -8,81 +8,48 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 sass styles/main.scss styles/main.css --watch
 ```
-Use this command to compile SCSS to CSS with watch mode for development.
 
 ### Local Development
-- Use a local server (like Live Server extension) to serve the website
-- Open index.html in a browser for testing
-- No build process required - this is a static HTML/CSS/JS website
-
-### Performance Testing
-- Test on multiple devices and screen sizes
-- Check accessibility with screen readers
-- Validate HTML and CSS
-- Test form submissions and interactions
+Use a local server (e.g. VS Code Live Server) to serve the site — open `index.html` as the entry point. No build process is required.
 
 ## Architecture Overview
 
-This is a static website for CHW (Community Heart & Wellness), a women's health organization. The site uses a traditional multi-page HTML structure with modern SCSS styling and vanilla JavaScript.
+Static website for CHW (Chicago Holistic Women), a women's health organization. Multi-page HTML with SCSS styling and vanilla JavaScript.
 
-### File Structure
-- **HTML Pages**: 6 main pages (index.html, about.html, services.html, circles.html, resources.html, contact.html)
-- **Styles**: SCSS-based architecture with modular organization
-  - `main.scss`: Main stylesheet importing all partials
-  - `_variables.scss`: Color palette, typography, and design tokens
-  - `_mixins.scss`: Reusable SCSS mixins and utilities
-  - `_components.scss`: Component-specific styles
-- **JavaScript**: Single `main.js` file with CHWWebsite class handling all interactions
-- **Images**: Static assets directory (currently empty)
+### HTML Pages
 
-### Design System
+**Main site pages** (share `styles/main.css` and `js/main.js`):
+- `index.html`, `about.html`, `services.html`, `circles.html`, `resources.html`, `contact.html`
 
-**Color Palette**:
-- Primary: Deep Pomegranate (#7A2B3A)
-- Secondary: Sage Green variants
-- Neutrals: Cream, linen, pearl, stone tones
-- Background: Pure cream (#FDFBF9)
+**Standalone print/promo pages** (each has its own flat CSS file, no shared JS):
+- `flyer.html` → `flyer-styles.css`
+- `handout.html`, `handout2.html` → `handout-styles.css`
+- `newsletter.html` → `newsletter-styles.css`
+- `promo.html` → `notecard-styles.css`
+- `handout.html` also references `selfcare-handout-styles.css`
 
-**Typography**:
-- Headings: Cormorant Garamond (serif)
-- Body: Inter (sans-serif)
-- Accent: Dancing Script (cursive)
+### SCSS Structure
 
-### JavaScript Architecture
+`styles/main.scss` uses `@use` to import partials in this order:
+- `_variables.scss` — design tokens (colors, fonts, breakpoints, spacing, shadows)
+- `base/` — reset, typography, utilities
+- `layout/` — header, footer, grid
+- `components/` — buttons, cards, forms, notifications
+- `pages/` — hero, nav-grid, philosophy, about, services, contact, resources, circles, community-cta
+- `vendors/` — animations, mixins
 
-The site uses a single `CHWWebsite` class that handles:
-- Navigation and mobile menu functionality
-- Scroll animations and effects
-- Form handling and validation
-- Smooth scrolling between sections
-- Active navigation state management
+### Design Tokens (`_variables.scss`)
 
-### Key Features
+**Colors**: Primary `#1D3D4D` (dark teal), Secondary `#5C95A7`, Background `#FDFBF9`
+**Fonts**: Playfair Display (headings), Inter (body), Dancing Script (accent/script)
+**Breakpoints**: sm 640px, md 768px, lg 1024px, xl 1200px
 
-- **Professional Design**: Sophisticated color palette with pomegranate and sage tones
-- **Responsive Design**: Mobile-first with fluid typography and spacing
-- **Interactive Navigation**: Smart header hide/show, animated mobile menu
-- **Advanced Form Handling**: Real-time validation, floating labels, custom radio buttons
-- **Smooth Animations**: Parallax effects, scroll-triggered animations with stagger delays
-- **Accessibility**: Skip links, ARIA attributes, keyboard navigation, screen reader support
-- **Performance Optimized**: Font preloading, efficient scroll handlers, image lazy loading
-- **Professional Notifications**: Toast-style notifications with proper UX patterns
-- **SEO Optimized**: Meta tags, structured data, semantic HTML
+### JavaScript (`js/main.js`)
 
-### Enhanced JavaScript Features
-
-- **Performance Optimized Scrolling**: RequestAnimationFrame for smooth performance
-- **Advanced Form Validation**: Debounced validation, regex patterns, accessibility
-- **Professional Notification System**: Multiple notification types with auto-dismiss
-- **Accessibility Features**: Skip links, focus management, keyboard navigation
-- **Responsive Behavior**: Auto-close mobile menu on resize, smart header behavior
-- **Loading States**: Professional loading spinners and state management
-
-### Development Notes
-
-- All styling uses SCSS with a professional component-based architecture
-- JavaScript is modern ES6+ with comprehensive class-based organization
-- Forms include professional validation patterns and UX best practices
-- Images are optimized with lazy loading and error handling
-- Accessibility follows WCAG guidelines with proper ARIA implementation
-- Performance optimized with preloading and efficient event handling
+Single `CHWWebsite` class instantiated on page load. Key methods:
+- `setupNavigation()` — scroll-based header hide/show using `requestAnimationFrame`
+- `setupMobileMenu()` — hamburger toggle
+- `setupScrollAnimations()` — IntersectionObserver-based reveal animations
+- `setupFormHandling()` — debounced validation with floating labels
+- `setupSmoothScrolling()` — anchor link smooth scroll
+- `setupAccessibility()` — skip links, focus management

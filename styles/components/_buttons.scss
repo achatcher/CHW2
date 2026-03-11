@@ -18,13 +18,13 @@
     border-radius: 50px;
     cursor: pointer;
     transition: $transition-base;
-    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    background: $color-primary;
     color: white;
-    
+
     &:hover {
+        background: $color-ocean;
         transform: translateY(-2px);
-        // Updated shadow from green (61, 90, 65) to new slate (29, 61, 77)
-        box-shadow: 0 8px 25px rgba(29, 61, 77, 0.3);
+        box-shadow: 0 8px 24px rgba(6, 66, 115, 0.25);
     }
     
     &--secondary {
@@ -39,7 +39,11 @@
     }
     
     &--blush {
-        background: linear-gradient(135deg, $color-secondary, $color-secondary-dark);
+        background: $color-ocean;
+
+        &:hover {
+            background: $color-primary;
+        }
     }
     
     &--lg {
@@ -54,11 +58,11 @@
     
     &--outline {
         background: transparent;
-        border: 2px solid $color-primary;
-        color: $color-primary;
-        
+        border: 2px solid $color-ocean;
+        color: $color-ocean;
+
         &:hover {
-            background: $color-primary;
+            background: $color-ocean;
             color: white;
         }
     }

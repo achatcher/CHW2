@@ -1,17 +1,22 @@
 @use 'sass:color';
 
 // Colors
-$color-primary: #1D3D4D;
-$color-primary-dark: #142B36;
-$color-secondary: #5C95A7;
-$color-secondary-dark: #4A7A89;
-$color-dark: #2A2622;
-$color-dark-light: #1F1E1B;
-$color-text: #1D3D4D;
-$color-bg: #FDFBF9;
-$color-accent: #D2D9E5;
-$color-border: rgba(29, 61, 77, 0.1);
-$color-overlay: rgba(29, 61, 77, 0.7);
+$color-primary: #064273;        // deep navy — primary brand anchor
+$color-primary-dark: #042a49;   // deeper navy
+$color-ocean: #1da2d8;          // bright ocean blue — accent/cta
+$color-ocean-light: #7fcdff;    // sky blue — light accent
+$color-secondary: #76b6c4;      // soft teal — secondary
+$color-secondary-dark: #4a8fa0; // deeper teal
+$color-dark: #1e2d3d;           // dark ink for text
+$color-dark-light: #2c3e50;     // body text
+$color-text: #2c3e50;           // readable dark body text
+$color-bg: #faf7f4;             // warm sand white — main background
+$color-sand: #e8ddd0;           // warm sand neutral
+$color-sand-light: #f3ede6;     // very light sand — section tint
+$color-ocean-pale: #def3f6;     // pale ocean — light section tint
+$color-accent: #e8ddd0;         // warm sand as default accent
+$color-border: rgba(6, 66, 115, 0.1);
+$color-overlay: rgba(4, 42, 73, 0.72);
 
 // Typography (No changes)
 $font-primary: 'Playfair Display', serif;

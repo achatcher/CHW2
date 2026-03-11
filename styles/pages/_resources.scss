@@ -5,7 +5,7 @@
 --------------------------------------------------------------*/
 
 .resources-intro {
-    background: linear-gradient(180deg, $color-bg 0%, rgba(232, 240, 232, 0.3) 100%);
+    background: linear-gradient(180deg, $color-bg 0%, $color-sand-light 100%);
 }
 
 .resources-intro__content {
@@ -16,12 +16,12 @@
 // Resource Categories
 .resource-category {
     &:nth-child(even) {
-        background: rgba(232, 240, 232, 0.2);
+        background: $color-sand-light;
     }
 }
 
 .herbal-section {
-    background: linear-gradient(135deg, rgba(139, 74, 92, 0.03), rgba(232, 240, 232, 0.3));
+    background: $color-sand-light;
 }
 
 .resource-category__header {
@@ -39,7 +39,7 @@
 .resource-category__icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    background: $color-primary;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -76,14 +76,14 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     transition: $transition-base;
-    border: 1px solid rgba(61, 90, 65, 0.1);
+    border: 1px solid rgba(6, 66, 115, 0.1);
     display: flex;
     flex-direction: column;
     
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        border-color: rgba(61, 90, 65, 0.2);
+        border-color: rgba(6, 66, 115, 0.2);
     }
 }
 
@@ -112,8 +112,8 @@
 
 .resource-item__footer {
     padding: 1rem 2rem;
-    background: rgba(232, 240, 232, 0.3);
-    border-top: 1px solid rgba(61, 90, 65, 0.1);
+    background: $color-sand-light;
+    border-top: 1px solid rgba(6, 66, 115, 0.1);
 }
 
 .resource-link {
@@ -160,19 +160,19 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     text-align: center;
     transition: $transition-base;
-    border: 1px solid rgba(61, 90, 65, 0.1);
+    border: 1px solid rgba(6, 66, 115, 0.1);
     
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        border-color: rgba(61, 90, 65, 0.2);
+        border-color: rgba(6, 66, 115, 0.2);
     }
 }
 
 .book-item__icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, $color-secondary, $color-secondary-dark);
+    background: $color-primary;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -239,7 +239,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(61, 90, 65, 0.85), rgba(139, 74, 92, 0.85));
+    background: linear-gradient(135deg, rgba(6, 66, 115, 0.85), rgba(29, 162, 216, 0.85));
     z-index: 1;
 }
 
@@ -316,8 +316,8 @@
         width: 100%;
         
         &:hover {
-            background: rgba(85, 107, 86, 0.08);
-            border-color: rgba(85, 107, 86, 0.2);
+            background: rgba(29, 162, 216, 0.08);
+            border-color: rgba(29, 162, 216, 0.2);
             transform: translateY(-1px);
         }
     }
@@ -361,9 +361,9 @@
 }
 
 .checkbox-option input[type="checkbox"]:checked + .checkbox-checkmark {
-    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    background: $color-primary;
     border-color: $color-primary;
-    box-shadow: 0 2px 8px rgba(85, 107, 86, 0.3);
+    box-shadow: 0 2px 8px rgba(29, 162, 216, 0.3);
     
     &::after {
         transform: rotate(45deg) scale(1);

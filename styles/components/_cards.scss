@@ -44,14 +44,14 @@
     width: 100%;
     height: 100%;
     // Updated from green to new slate (29, 61, 77)
-    background: linear-gradient(180deg, rgba(29, 61, 77, 0.1) 0%, rgba(29, 61, 77, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(6, 66, 115, 0.1) 0%, rgba(6, 66, 115, 0.8) 100%);
     z-index: 1;
     transition: $transition-base;
 }
 
 .nav-card:hover .nav-card__overlay {
     // Updated from green to new slate (29, 61, 77)
-    background: linear-gradient(180deg, rgba(29, 61, 77, 0.3) 0%, rgba(29, 61, 77, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(6, 66, 115, 0.3) 0%, rgba(6, 66, 115, 0.9) 100%);
 }
 
 .nav-card__content {
@@ -98,7 +98,7 @@
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: $transition-base;
-    
+
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -108,8 +108,7 @@
 .value-pillar__icon {
     width: 72px;
     height: 72px;
-    // Updated gradient to use your new accent and a neutral light gray
-    background: linear-gradient(135deg, $color-accent, #E8EBF0);
+    background: $color-sand;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -141,7 +140,7 @@
     text-align: center;
     transition: $transition-base;
     // Updated border from green to new slate (29, 61, 77)
-    border: 1px solid rgba(29, 61, 77, 0.1);
+    border: 1px solid rgba(6, 66, 115, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -152,7 +151,7 @@
         transform: translateY(-4px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         // Updated border-color from green to new slate (29, 61, 77)
-        border-color: rgba(29, 61, 77, 0.2);
+        border-color: rgba(6, 66, 115, 0.2);
     }
 }
 
@@ -181,13 +180,19 @@
 }
 
 // Mobile responsive for cards
+@media (max-width: 768px) {
+    .nav-card {
+        height: 260px;
+    }
+}
+
 @media (max-width: 640px) {
     .nav-grid__container {
-        gap: 1.5rem;
+        gap: 1rem;
     }
-    
+
     .nav-card {
-        height: 350px;
+        height: 220px;
     }
     
     .nav-card__content {
@@ -210,11 +215,12 @@
     .value-pillar {
         padding: 1.5rem;
     }
-    
+
     .value-pillar__icon {
         width: 60px;
         height: 60px;
         font-size: 20px;
+        margin-bottom: 1rem;
     }
     
     .connection-card {

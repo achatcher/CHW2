@@ -39,7 +39,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(61, 90, 65, 0.7); // Changed to match other pages
+    background: rgba(6, 66, 115, 0.7);
     z-index: 1;
 }
 
@@ -175,7 +175,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(61, 90, 65, 0.7);
+    background: rgba(6, 66, 115, 0.7);
     z-index: 1;
 }
 
@@ -218,16 +218,34 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 60vh; // Match other pages on mobile
-        min-height: 600px;
+        height: auto;
+        min-height: 480px;
+        padding: 3rem 0;
     }
-    
+
+    .hero__subtitle {
+        font-size: 18px;
+    }
+
+    .hero__description {
+        font-size: 15px;
+        margin-bottom: 2rem;
+    }
+
     .page-header {
-        height: 50vh;
-        min-height: 500px;
+        height: 45vh;
+        min-height: 340px;
     }
-    
+
     .page-header__content {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
+    }
+
+    .page-header__title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .page-header__description {
+        font-size: 15px;
     }
 }

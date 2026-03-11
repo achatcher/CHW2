@@ -62,7 +62,7 @@
         &:focus {
             outline: none;
             border-color: $color-primary;
-            box-shadow: 0 0 0 2px rgba(85, 107, 86, 0.1); // Reduced shadow
+            box-shadow: 0 0 0 2px rgba(29, 162, 216, 0.1); // Reduced shadow
         }
         
         &::placeholder {
@@ -94,7 +94,7 @@
     font-size: 14px; // Added smaller font size
     
     &:hover {
-        background: rgba(61, 90, 65, 0.05);
+        background: rgba(29, 162, 216, 0.05);
         border-radius: 4px; // Reduced from 6px
         padding-left: 0.25rem; // Reduced from 0.5rem
     }
@@ -181,7 +181,7 @@
             &:focus {
                 outline: none;
                 border-color: $color-primary;
-                box-shadow: 0 0 0 2px rgba(85, 107, 86, 0.1); // Reduced shadow
+                box-shadow: 0 0 0 2px rgba(29, 162, 216, 0.1); // Reduced shadow
             }
         }
     }
@@ -204,7 +204,7 @@
     transition: background-color 0.3s ease;
     
     &:hover {
-        background: rgba(85, 107, 86, 0.05);
+        background: rgba(29, 162, 216, 0.05);
     }
     
     input[type="checkbox"] {
@@ -291,7 +291,7 @@
             &:focus {
                 outline: none;
                 border-color: $color-primary;
-                box-shadow: 0 0 0 2px rgba(85, 107, 86, 0.1); // Reduced shadow
+                box-shadow: 0 0 0 2px rgba(29, 162, 216, 0.1); // Reduced shadow
             }
         }
     }

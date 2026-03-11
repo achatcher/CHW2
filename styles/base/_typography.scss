@@ -22,15 +22,15 @@ p {
 }
 
 .display {
-    font-size: clamp(3rem, 7vw, 5rem) !important;
+    font-size: clamp(2.25rem, 7vw, 5rem) !important;
     font-weight: 300 !important;
     letter-spacing: -0.02em;
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: $color-primary;
+    color: $color-text;
 }
 
 // Font utilities

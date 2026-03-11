@@ -5,8 +5,7 @@
 --------------------------------------------------------------*/
 
 .footer {
-    // Kept your exact gradient logic, just using the new $color-dark
-    background: linear-gradient(135deg, $color-dark, #1F1E1B);
+    background: linear-gradient(160deg, #0a2d4a 0%, #042a49 100%);
     color: white;
     padding: 4rem 0 0;
 }
@@ -20,7 +19,7 @@
 
 .footer__brand {
     max-width: 300px;
-    
+
     p {
         color: rgba(255, 255, 255, 0.8);
         font-size: 14px;
@@ -72,13 +71,28 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 0;
+    }
+
     .footer__content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .footer__brand {
         max-width: none;
+    }
+
+    .footer__section ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 1.5rem;
+
+        li {
+            margin-bottom: 0;
+        }
     }
 }
